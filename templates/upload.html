@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    
+
+
+
+
+<div>
+    <img id="upload-logo" src="static/logo.png">
+    <h2 id="upload-text">Upload an Image to AI</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input class="form-control form-control-lg" name="picture" id="upload-file" type="file">
+            </div>
+            <button type="submit" id="upload-button" class="btn btn-outline-success">Upload</button>
+        </form>
+</div>
+
+
+
+{% if found %} 
+    <h2 id="upload-text" style="margin-top: 5%;">AI has detected as {{ result }}</h1>
+{% endif %}
+
+{% endblock %}
